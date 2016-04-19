@@ -10,9 +10,11 @@
   <body>
     <main>
       <section ng-controller="countersCtrl as counters">
-        <button ng-click="counters.increment()">+</button>
-        {{ counters.count }}
-        <button ng-click="counters.decrement()">-</button>
+        <section ng-repeat="counter in counters.myCounters">
+          <button ng-click="counters.increment(counter)">+</button>
+          {{ counter.count }}
+          <button ng-click="counters.decrement(counter)">-</button>
+        </section>
       </section>
     </main>
   </body>

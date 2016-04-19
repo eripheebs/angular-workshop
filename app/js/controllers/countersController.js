@@ -1,14 +1,14 @@
 countersApp.controller("countersCtrl", function(){
   var self = this;
 
-  self.count = 0;
+  self.myCounters = [{count : 0}, {count : 0}]
 
-  self.increment = function() {
-    self.count++;
+  self.increment = function(hash) {
+    hash.count++;
   }
 
-  self.decrement = function() {
-    self.count--;
+  self.decrement = function(hash) {
+    hash.count--;
   }
 
 });
