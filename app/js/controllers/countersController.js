@@ -6,4 +6,9 @@ countersApp.controller("countersCtrl", function(){
   self.increment = function() {
     self.count++;
   }
+
+  self.decrement = function() {
+    self.count--;
+  }
+
 });
