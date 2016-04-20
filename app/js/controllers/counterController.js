@@ -26,20 +26,25 @@ counterApp.controller('ExampleCtrl', function(ExampleFactory, ExampleService){
   self.exampleService = ExampleService;
 });
 
-counterApp.controller('CounterCtrl', function(){
+counterApp.controller('CounterCtrl', ['CounterFactory', function(CounterFactory){
   var self = this;
 
-  self.counters = [{count: 0}, {count: 0}];
+  this.counters = [new CounterFactory]
+}]);
 
-  // Now add buttons
-  self.increment = function(counter) {
-    counter.count++;
+
+counterApp.factory('CounterFactory', function(){
+  var CounterFactory = function() {
+    this.count = 0;
+  }
+
+  CounterFactory.prototype.increment = function() {
+    this.count++;
   };
 
-  // Now get them to build this using a basic app, and add decrement
-  // Now add a second counter
-  // Now add five counters
-  self.decrement = function(counter) {
-    counter.count--;
+  CounterFactory.prototype.decrement = function() {
+    this.count--;
   };
+
+  return CounterFactory;
 });

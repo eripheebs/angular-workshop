@@ -25,9 +25,9 @@
 
     <div ng-controller="CounterCtrl as counterCtrl">
       <div ng-repeat="counter in counterCtrl.counters">
-        <button ng-click="counterCtrl.decrement(counter)">-</button>
+        <button ng-click="counter.decrement()">-</button>
         {{ counter.count  }}
-        <button ng-click="counterCtrl.increment(counter)">+</button>
+        <button ng-click="counter.increment()">+</button>
       </div>
     </div>
   </body>
